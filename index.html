@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AliAlsahad | Portfolio</title>
+  <meta name="description" content="بورتفوليو علي الصهد بتصميم أبيض وأسود هادئ" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="top-loader" id="topLoader" aria-hidden="true">
+    <div class="loader-text">رحلة الإبداع...</div>
+  </div>
+
+  <div class="noise"></div>
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+
+  <div class="navbar-wrap">
+    <div class="container">
+      <header class="navbar" id="navbar">
+        <a href="#home" class="brand" aria-label="الصفحة الرئيسية">
+          <div class="brand-text">
+            <strong>AliAlsahad</strong>
+          </div>
+        </a>
+
+        <nav class="nav-links" aria-label="التنقل الرئيسي">
+          <a href="#about">عني</a>
+          <a href="#skills">مهاراتي</a>
+          <a href="#portfolio">أعمالي</a>
+          <a href="#career">مسيرتي</a>
+          <a href="#certificates">شهاداتي</a>
+          <a href="#contact">تواصل</a>
+        </nav>
+
+        <div class="nav-actions">
+          <div class="availability" id="availabilityBadge">
+            <span class="availability-dot"></span>
+            <span id="availabilityText">متوفر للعمل</span>
+          </div>
+
+          <button class="theme-toggle" id="themeToggle" aria-label="تبديل الثيم">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2.2M12 19.8V22M4.93 4.93l1.56 1.56M17.51 17.51l1.56 1.56M2 12h2.2M19.8 12H22M4.93 19.07l1.56-1.56M17.51 6.49l1.56-1.56"></path>
+            </svg>
+          </button>
+
+          <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="4" y1="7" x2="20" y2="7"></line>
+              <line x1="4" y1="12" x2="20" y2="12"></line>
+              <line x1="4" y1="17" x2="20" y2="17"></line>
+            </svg>
+          </button>
+        </div>
+      </header>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="container hero-inner">
+        <h1 class="hero-title reveal">
+          رحلة لعالم لاينتهي من
+          <span class="word-rotator" aria-live="polite">
+            <span class="word-track" id="wordTrack">
+              <span class="word-item">الإبداع</span>
+              <span class="word-item">الابتكار</span>
+              <span class="word-item">الشغف</span>
+              <span class="word-item">التطور</span>
+              <span class="word-item">الإثراء</span>
+              <span class="word-item">التعلم</span>
+            </span>
+          </span>
+        </h1>
+
+        <div class="hero-text reveal">
+          <p>طالب علوم حاسب شغوف بالأمن السيبراني والتصميم الجرافيكي</p>
+        </div>
+
+        <div class="hero-actions reveal">
+          <a href="#about" class="btn">استكشف الرحلة</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">About Me</div>
+            <h2 class="section-title">عني</h2>
+          </div>
+          <p class="section-desc">نبذة سريعة عن رحلتي بين التقنية، الأمن السيبراني، والتصميم الجرافيكي.</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-photo panel reveal">
+            <img src="profile.png" alt="AliAlsahad" />
+          </div>
+
+          <div class="about-content panel reveal">
+            <div class="section-kicker">من أنا</div>
+            <h3 class="section-title" style="font-size: clamp(1.55rem, 4vw, 2.8rem);">علي الصهد</h3>
+            <p>
+               طالب علوم حاسب مسار شبكات في جامعة الملك سعود. شغوف بالتقنية وخصوصًا الأمن السيبراني، وأحب أفهم كيف تصير الهجمات وكيف نقدر نحمي الأنظمة منها بطريقة ذكية.
+            </p>
+            <p>
+              غير كذا، عندي جانب إبداعي قوي في التصميم الجرافيكي، وأعتبره المساحة اللي أطلع فيها أفكاري بشكل بصري جذاب. أشتغل على تصميم الهويات البصرية، البوسترات الاحترافية، ومحتوى السوشيال ميديا بأسلوب ملفت وسهل التفاعل.
+            </p>
+<div class="terminal-container panel reveal">
+    <div class="terminal-header">
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+    </div>
+    
+    <div class="terminal-body" id="terminalBody">
+        <div class="terminal-output" id="terminalOutput">
+            <div>ali@alsahad:~$ أهلاً بك! اكتب 'help' لعرض الأوامر المتاحة...</div>
+        </div>
+        
+        <div class="terminal-input-line">
+            <span class="prompt">ali@alsahad:~$</span>
+            <input type="text" id="terminalInput" autocomplete="off" spellcheck="false" autofocus>
+        </div>
+    </div>
+</div>            <a href="#skills" class="btn" style="margin-top: 28px;">اكتشف مهاراتي</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">My Skills</div>
+            <h2 class="section-title">مهاراتي التقنية والإبداعية</h2>
+          </div>
+          <p class="section-desc">مجموعة من المهارات التي أعمل عليها في البرمجة، الأمن السيبراني، والذكاء الاصطناعي و التصميم.</p>
+        </div>
+
+        <div class="skills-grid-sync">
+
+          
+
+          <article class="skill-card reveal">
+            <div class="skill-header">
+              <div class="skill-title-wrap">
+                <div class="icon-box">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                </div>
+                <div>
+                  <strong>الأمن السيبراني</strong>
+                  <div class="skill-sub">حماية واختبار اختراق</div>
+                </div>
+              </div>
+            </div>
+            <div class="progress-list" style="flex-grow: 1;">
+              <div class="progress-item"><div class="progress-info"><div class="progress-info-left"><span>Penetration Testing</span></div><strong>70%</strong></div><div class="progress-bar"><div class="progress-fill" data-progress="70"></div></div></div>
+              <div class="progress-item"><div class="progress-info"><div class="progress-info-left"><span>Ethical Hacking</span></div><strong>60%</strong></div><div class="progress-bar"><div class="progress-fill" data-progress="60"></div></div></div>
+              <div class="progress-item"><div class="progress-info"><div class="progress-info-left"><span>Network Security</span></div><strong>40%</strong></div><div class="progress-bar"><div class="progress-fill" data-progress="40"></div></div></div>
+              <div class="progress-item"><div class="progress-info"><div class="progress-info-left"><span>Security Auditing</span></div><strong>40%</strong></div><div class="progress-bar"><div class="progress-fill" data-progress="40"></div></div></div>
+            </div>
+          </article>
+
+          
+          <article class="skill-card reveal">
+            <div class="skill-header">
+              <div class="skill-title-wrap">
+                <div class="icon-box">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect></svg>
+                </div>
+                <div>
+                  <strong>الذكاء الاصطناعي</strong>
+                  <div class="skill-sub">أدوات الأتمتة وهندسة الأوامر</div>
+                </div>
+              </div>
+            </div>
+            <div class="progress-list" style="flex-grow: 1;">
+              <div class="progress-item"><div class="progress-info"><div class="progress-info-left"><span>Prompt Engineering</span></div><strong>80%</strong></div><div class="progress-bar"><div class="progress-fill" data-progress="80"></div></div></div>
+              <div class="progress-item"><div class="progress-info"><div class="progress-info-left"><span>AI Tools</span></div><strong>70%</strong></div><div class="progress-bar"><div class="progress-fill" data-progress="70"></div></div></div>
+              <div class="progress-item"><div class="progress-info"><div class="progress-info-left"><span>Automation</span></div><strong>60%</strong></div><div class="progress-bar"><div class="progress-fill" data-progress="60"></div></div></div>
+              <div class="progress-item"><div class="progress-info"><div class="progress-info-left"><span>AI Content Workflows</span></div><strong>40%</strong></div><div class="progress-bar"><div class="progress-fill" data-progress="40"></div></div></div>
+            </div>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-header">
+              <div class="skill-title-wrap">
+                <div class="icon-box">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 18l6-6-6-6"></path><path d="M8 6l-6 6 6 6"></path></svg>
+                </div>
+                <div>
+                  <strong>اللغات البرمجية</strong>
+                  <div class="skill-sub">لغات وأدوات التطوير</div>
+                </div>
+              </div>
+            </div>
+            <div class="progress-list" style="flex-grow: 1;">
+              <div class="progress-item"><div class="progress-info"><div class="progress-info-left"><span>HTML &amp; CSS</span></div><strong>70%</strong></div><div class="progress-bar"><div class="progress-fill" data-progress="70"></div></div></div>
+              <div class="progress-item"><div class="progress-info"><div class="progress-info-left"><span>JavaScript</span></div><strong>30%</strong></div><div class="progress-bar"><div class="progress-fill" data-progress="30"></div></div></div>
+              <div class="progress-item"><div class="progress-info"><div class="progress-info-left"><span>Python</span></div><strong>40%</strong></div><div class="progress-bar"><div class="progress-fill" data-progress="40"></div></div></div>
+              <div class="progress-item"><div class="progress-info"><div class="progress-info-left"><span>Java</span></div><strong>90%</strong></div><div class="progress-bar"><div class="progress-fill" data-progress="90"></div></div></div>
+            </div>
+          </article>
+
+
+          <article class="skill-card reveal">
+            <div class="skill-header">
+              <div class="skill-title-wrap">
+                <div class="icon-box">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>
+                </div>
+                <div>
+                  <strong>التصميم الجرافيكي</strong>
+                  <div class="skill-sub">برامج وأدوات التصميم</div>
+                </div>
+              </div>
+            </div>
+            <div class="progress-list" style="flex-grow: 1;">
+              <div class="progress-item"><div class="progress-info"><div class="progress-info-left"><span>Adobe Photoshop</span></div><strong>90%</strong></div><div class="progress-bar"><div class="progress-fill" data-progress="90"></div></div></div>
+              <div class="progress-item"><div class="progress-info"><div class="progress-info-left"><span>Adobe Illustrator</span></div><strong>60%</strong></div><div class="progress-bar"><div class="progress-fill" data-progress="60"></div></div></div>
+              <div class="progress-item"><div class="progress-info"><div class="progress-info-left"><span>Figma</span></div><strong>70%</strong></div><div class="progress-bar"><div class="progress-fill" data-progress="70"></div></div></div>
+              <div class="progress-item"><div class="progress-info"><div class="progress-info-left"><span>Adobe After Effects</span></div><strong>30%</strong></div><div class="progress-bar"><div class="progress-fill" data-progress="30"></div></div></div>
+              <div class="progress-item"><div class="progress-info"><div class="progress-info-left"><span>Adobe Premiere Pro</span></div><strong>70%</strong></div><div class="progress-bar"><div class="progress-fill" data-progress="70"></div></div></div>
+            </div>
+          </article>
+
+        </div>
+
+
+          </div> </div> </div> </section> <section class="section" id="portfolio">
+
+    <section class="section" id="portfolio">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">My work</div>
+            <h2 class="section-title">أعمالي</h2>
+          </div>
+          <p class="section-desc">سيضاف قريباً.</p>
+        </div>
+
+        <div class="portfolio-grid" id="portfolioGrid">
+          <article class="work-card reveal" style="grid-column: 1 / -1; min-height: 220px; align-items:center; justify-content:center; text-align:center;">
+            <div class="work-preview" style="max-width: 220px; width:100%; margin: 0 auto 18px;">
+              <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="3"></rect><path d="M8 12h8"></path></svg>
+            </div>
+            <h3>سيضاف قريباً</h3>
+            <p>يتم حالياً تجهيز قسم الأعمال وإضافة المشاريع والملفات بشكل منظم.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+<section class="section" id="timeline-section">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <div class="section-kicker">Experience & Certifications</div>
+        <h2 class="section-title">المسار المهني والشهادات</h2>
+      </div>
+      <p class="section-desc">أبرز المحطات، الشهادات، والإنجازات في رحلتي التقنية.</p>
+    </div>
+<div class="timeline">
+  <div class="timeline-item reveal">
+  <div class="timeline-dot"></div>
+  <div class="timeline-date">2023-حتى الان</div>
+  <div class="timeline-content-column">
+    <div class="timeline-image-top">
+      <img src="King-Saud-University-01.png" alt="University Logo" style="max-width: 100%; max-height: 100%; object-fit: contain;" />
+    </div>
+    <div class="timeline-text">
+      <h3>جامعة الملك سعود</h3>
+    </div>
+    <p>تخصص علوم الحاسب في مسار الشبكات</p>
+  </div>
+</div>
+</div>  
+  <section class="section" id="certificates">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">My Certificates</div>
+            <h2 class="section-title">شهاداتي الاحترافية</h2>
+          </div>
+          <p class="section-desc">الشهادات التي حصلت عليها أو أعمل عليها في مساري التقني.</p>
+        </div>
+
+        <div class="certificates-grid">
+          <article class="certificate-card reveal">
+            <div class="badge">
+              <img src="eJPT.png" alt="eJPT Badge" />
+            </div>
+            <div class="cert-info">
+              <h3>eJPTv2 — Junior Penetration Tester</h3>
+              <p>شهادة احترافية من eLearnSecurity تُقيّم قدرة المختبر على تنفيذ اختبار الاختراق بشكل عملي كامل. تشمل الشهادة مهارات جمع المعلومات، فحص الشبكات، استغلال الثغرات، والتحرك داخل الشبكة، وتُصدر بعد اجتياز اختبار عملي حقيقي على بيئة افتراضية محاكاة.</p>
+              <div class="cert-tags">
+                <span>Penetration Testing</span>
+                <span>Network Exploitation</span>
+                <span>Vulnerability Assessment</span>
+                <span>eLearnSecurity</span>
+                <span>INE Security</span>
+              </div>
+              <div class="cert-action">
+                <a href=https://certs.ine.com/9739f44a-340f-48a6-a62a-f7b30bab2e11#acc.k8fFqszX" target="_blank" class="cert-btn">عرض الشهادة ↗</a>
+              </div>
+            </div>
+            <div class="cert-date">2026 — 2029</div>
+          </article>
+        </div>
+      </div>
+      <article class="certificate-card reveal">
+            <div class="badge">
+              <img src="logosecurityplus.svg" alt="CompTIA Security+ Badge" />
+            </div>
+            <div class="cert-info">
+              <h3> CompTIA Security+</h3>
+              <p>دورة تحضيرية: إتمام البرنامج التدريبي الشامل لتأمين الشبكات والأجهزة، إدارة المخاطر، واكتشاف التهديدات الأمنية. يهدف التدريب لتجهيز المتدرب لاجتياز الاختبار العالمي للشهادة.</p>
+              <div class="cert-tags">
+                <span>Training Course</span>
+                <span>Cyber Security</span>
+                <span>Abaad Net</span>
+              </div>
+            </div>
+            <div class="cert-date">2025</div>
+          </article>
+
+          <article class="certificate-card reveal">
+            <div class="badge">
+              <img src="logonetworkplus.svg" alt="CompTIA Network+ Badge" />
+            </div>
+            <div class="cert-info">
+              <h3> CompTIA Network+</h3>
+              <p> دورة تحضيرية: إتمام التدريب العملي والنظري على تصميم وإدارة واستكشاف أخطاء الشبكات، والتعامل مع بروتوكولات الشبكة المختلفة استعداداً للاختبار الرسمي.</p>
+              <div class="cert-tags">
+                <span>Training Course</span>
+                <span>Networking</span>
+                <span>Abaad Net</span>
+              </div>
+            </div>
+            <div class="cert-date">2025</div>
+          </article>
+
+          <article class="certificate-card reveal">
+            <div class="badge">
+              <img src="logolinuxplus.svg" alt="CompTIA Linux+ Badge" />
+            </div>
+            <div class="cert-info">
+              <h3> CompTIA Linux+</h3>
+              <p>دورة تحضيرية:إنهاء الدورة التدريبية المخصصة لإدارة وصيانة وحماية أنظمة تشغيل لينكس، بما يشمل إدارة سطر الأوامر (CLI) وكتابة السكربتات الأساسية. </p>
+              <div class="cert-tags">
+                <span>Training Course</span>
+                <span>Linux Administration</span>
+                <span>Abaad Net</span>
+              </div>
+            </div>
+            <div class="cert-date">2025</div>
+          </article>
+      
+      <section class="section" id="ctf-stats">
+  <div class="container">
+    <div class="section-head reveal">
+    
+    </div>
+<section class="section" id="ctf">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <div class="section-kicker">Cybersecurity Rankings</div>
+        <h2 class="section-title"> حساباتي في منصات التحديات العالمية</h2>
+      </div>
+      <p class="section-desc">ستتعرف على حساباتي و ترتيبي  في المناصات العالمية </p>
+    </div>
+
+    <div class="ctf-grid">
+      
+      <a href="https://tryhackme.com/p/Alialsahad" target="_blank" class="ctf-card reveal">
+        <div class="ctf-platform-info">
+          <img src="3HnCZjv.png" alt="TryHackMe Badge">
+        </div>
+        <div class="ctf-overlay"><span>عرض الملف الشخصي ↗</span></div>
+      </a>
+
+      <a href="https://app.hackthebox.com/users/3311361?profile-top-tab=machines&ownership-period=1M&profile-bottom-tab=prolabs" target="_blank" class="ctf-card reveal">
+        <div class="ctf-platform-info">
+          <img src="Hack_The_Box_Logo_2.png" alt="HackTheBox Badge">
+        </div>
+        <div class="ctf-overlay"><span>عرض الملف الشخصي ↗</span></div>
+      </a>
+
+      <a href="https://bugbounty.sa/profile/alialsahad" target="_blank" class="ctf-card reveal">
+        <div class="ctf-platform-info">
+          <img src="bugbounty-logo-96e8cd6a.svg" alt="BugBounty Badge">
+        </div>
+        <div class="ctf-overlay"><span>عرض الملف الشخصي ↗</span></div>
+      </a>
+
+      <a href="https://flagyard.com/profile/Alialsahad" target="_blank" class="ctf-card reveal">
+        <div class="ctf-platform-info">
+          <img src="flagyar.svg" alt="Flagyard Badge">
+        </div>
+        <div class="ctf-overlay"><span>عرض الملف الشخصي ↗</span></div>
+      </a>
+
+    </div> </div> </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">Contact Me</div>
+            <h2 class="section-title">تواصل معي</h2>
+          </div>
+          <p class="section-desc">يمكنك التواصل معي عبر القنوات التالية.</p>
+        </div>
+<div class="contact-grid">
+  <a class="contact-card reveal" href="mailto:ali.taha.alsahad.696@gmail.com">
+    <div class="contact-icon">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+        <polyline points="22,6 12,13 2,6"></polyline>
+      </svg>
+    </div>
+    <strong>الإيميل</strong>
+    <span style="font-size: 0.85rem;">ali.taha.alsahad.696@gmail.com</span>
+  </a>
+
+  <a class="contact-card reveal" href="https://wa.me/966598006016" target="_blank" rel="noopener">
+    <div class="contact-icon">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+    </div>
+    <strong>واتساب</strong>
+    <span>+966 59 800 6016</span>
+  </a>
+
+  <a class="contact-card reveal" href="https://www.linkedin.com/in/ali-taha-alsahad/" target="_blank" rel="noopener">
+    <div class="contact-icon">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+      </svg>
+    </div>
+    <strong>لينكدان</strong>
+    <span>Ali Alsahad</span>
+  </a>
+
+  <a class="contact-card reveal" href="https://x.com/AliAlsahad" target="_blank" rel="noopener">
+    <div class="contact-icon">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/>
+      </svg>
+    </div>
+    <strong>إكس</strong>
+    <span>@AliAlsahad</span>
+  </a>
+</div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="dino-birthday-section">
+  <div class="container">
+    <h3 class="dino-celebration-title">احتفالاً بوصولك للنهاية!</h3>
+    <div class="dino-birthday-image-wrap">
+      <img src="Chrome_Dinosaur_Game.gif" alt="Google Birthday Dino Celebrating" class="dino-birthday-img">
+    </div>
+    <div class="dino-celebration-text">
+      <p>لقد وصلت للنهاية، يا بطل!</p>
+      <p>شكراً لزيارتك!</p>
+         <div class="container">صنع بإتقان من علي الصهد 2026</div>
+
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+  
+  <script src="script.js"></script>
+
+  <div class="chatbot-container" id="chatbotContainer">
+  <button class="chatbot-toggler" id="chatbotToggler">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-open"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-close" style="display: none;"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+  </button>
+  
+  <div class="chatbot-window" id="chatbotWindow">
+    <div class="chatbot-header">
+      <div class="bot-info">
+        <span class="bot-status-dot"></span>
+        <h3>مساعد علي الذكي</h3>
+      </div>
+    </div>
+    <div class="chatbot-body" id="chatbotBody">
+      <div class="message bot-message">
+        أهلاً بك! أنا مساعد ذكي مصغر هنا للإجابة عن أسئلتك حول علي الصهد. كيف يمكنني مساعدتك اليوم؟
+      </div>
+    </div>
+    <div class="chatbot-footer">
+      <input type="text" id="chatbotInput" placeholder="اكتب سؤالك هنا...">
+      <button id="chatbotSend">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+</body>
+
+</html>
