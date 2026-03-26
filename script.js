@@ -318,56 +318,58 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-// === MATRIX RAIN ANIMATION & HACKER TOGGLE ===
-const canvas = document.getElementById('hackerCanvas');
-const ctx = canvas.getContext('2d');
-let animationId;
+// === برمجة التيرمنال التفاعلي للـ Portfolio ===
+const terminalInput = document.getElementById('terminalInput');
+const terminalOutput = document.getElementById('terminalOutput');
+const terminalBody = document.getElementById('terminalBody');
 
-function initMatrix() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    const alphabet = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿ";
-    const fontSize = 16;
-    const columns = canvas.width / fontSize;
-    const rainDrops = Array.from({ length: columns }).fill(1);
+// قائمة الأوامر المتاحة
+const commands = {
+    'whoami': '> CS_Student | Cybersecurity_Enthusiast | Graphic_Designer',
+    'skills': '[+] Network Security\n[+] Penetration Testing\n[+] Python & Java\n[+] Web Development',
+    'contact': 'Email: ali.taha.alsahad.696@gmail.com\nX: @AliAlsahad',
+    'help': 'الأوامر المتاحة: whoami, skills, contact, clear\nأمر سري: جرب تكتب sudo hack',
+    'clear': ''
+};
 
-    function draw() {
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-        ctx.fillStyle = '#0F0';
-        ctx.font = fontSize + 'px monospace';
+// التركيز على مربع الكتابة بمجرد الضغط على أي مكان في التيرمنال
+if(terminalBody && terminalInput) {
+    terminalBody.addEventListener('click', () => terminalInput.focus());
 
-        for (let i = 0; i < rainDrops.length; i++) {
-            const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
-            ctx.fillText(text, i * fontSize, rainDrops[i] * fontSize);
-            if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-                rainDrops[i] = 0;
+    terminalInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            const cmd = this.value.trim().toLowerCase();
+            
+            // طباعة السطر اللي كتبه الزائر
+            const cmdLine = document.createElement('div');
+            cmdLine.innerHTML = `<span class="prompt">ali@alsahad:~$</span> ${this.value}`;
+            terminalOutput.appendChild(cmdLine);
+
+            // تنفيذ الأوامر
+            if (cmd === 'clear') {
+                terminalOutput.innerHTML = '';
+            } else if (cmd === 'sudo hack') {
+                // الأمر السري: يشغل وضع الهاكر تلقائياً!
+                document.body.classList.add("hacker-mode");
+                const response = document.createElement('div');
+                response.style.color = '#00ff41';
+                response.textContent = 'Access Granted. Welcome to the Matrix...';
+                terminalOutput.appendChild(response);
+            } else if (cmd !== '') {
+                const response = document.createElement('div');
+                response.style.whiteSpace = 'pre-wrap';
+                response.style.marginBottom = '12px';
+                response.style.opacity = '0.9';
+                
+                // البحث عن الأمر أو طباعة خطأ
+                response.textContent = commands[cmd] || `bash: ${cmd}: command not found`;
+                terminalOutput.appendChild(response);
             }
-            rainDrops[i]++;
+
+            // تنظيف مربع الكتابة والنزول لأسفل
+            this.value = '';
+            terminalBody.scrollTop = terminalBody.scrollHeight;
         }
-        animationId = requestAnimationFrame(draw);
-    }
-    draw();
+    });
 }
-
-// تعديل وظيفة الزر (الفيروس أو الجمجمة)
-const virusBtn = document.getElementById('virusButton') || document.getElementById('hackerButton');
-virusBtn?.addEventListener('click', () => {
-    document.body.classList.toggle("hacker-mode");
-    
-    if (document.body.classList.contains("hacker-mode")) {
-        initMatrix(); // بدء الأنميشن
-    } else {
-        cancelAnimationFrame(animationId); // إيقاف الأنميشن لتوفير موارد الجهاز
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-    }
-});
-
-// إعادة ضبط المقاسات عند تغيير حجم المتصفح
-window.addEventListener('resize', () => {
-    if (document.body.classList.contains("hacker-mode")) {
-        cancelAnimationFrame(animationId);
-        initMatrix();
-    }
-});
 
