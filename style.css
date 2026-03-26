@@ -1,58 +1,3 @@
-@font-face {
-  font-family: "Lyon Arabic Display";
-  src:
-    local("Lyon Arabic Display Light"),
-    local("COMM - Lyon Arabic Display Light"),
-    url("COMM%20-%20Lyon%20Arabic%20Display%20Light.otf") format("opentype");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Lyon Arabic Display";
-  src:
-    local("Lyon Arabic Display Regular"),
-    local("COMM - Lyon Arabic Display Regular"),
-    url("COMM%20-%20Lyon%20Arabic%20Display%20Regular.otf") format("opentype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Lyon Arabic Display";
-  src:
-    local("Lyon Arabic Display Medium"),
-    local("COMM - Lyon Arabic Display Medium"),
-    url("COMM%20-%20Lyon%20Arabic%20Display%20Medium.otf") format("opentype");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Lyon Arabic Display";
-  src:
-    local("Lyon Arabic Display Bold"),
-    local("COMM - Lyon Arabic Display Bold"),
-    url("COMM%20-%20Lyon%20Arabic%20Display%20Bold.otf") format("opentype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Lyon Arabic Display";
-  src:
-    local("Lyon Arabic Display Black"),
-    local("COMM - Lyon Arabic Display Black"),
-    url("COMM%20-%20Lyon%20Arabic%20Display%20Black.otf") format("opentype");
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-
 :root {
   --bg: #f8f8f8;
   --bg-elevated: #ffffff;
@@ -103,13 +48,17 @@ body.dark {
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
+/* تفعيل الخط على كامل الموقع */
 body {
-  font-family: "Lyon Arabic Display", sans-serif;
-  background: radial-gradient(circle at top right, rgba(127,127,127,0.04), transparent 28%), var(--bg);
-  color: var(--text);
-  line-height: 1.85;
-  overflow-x: hidden;
-  transition: background 0.45s ease, color 0.35s ease;
+    font-family: 'Lyon Arabic', sans-serif !important;
+    background: var(--bg);
+    color: var(--text);
+    /* اترك باقي الأكواد هنا كما هي */
+}
+
+/* التأكد من أن العناوين تأخذ الأوزان العريضة تلقائياً */
+h1, h2, h3, strong {
+    font-weight: 700; /* سيستخدم وزن Bold تلقائياً */
 }
 img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
@@ -163,26 +112,16 @@ body.dark .word-item { text-shadow: 0 0 24px rgba(255,255,255,.08); }
 .btn:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
 .about-grid { display: grid; grid-template-columns: .92fr 1.08fr; gap: 30px; align-items: stretch; }
 .panel { border-radius: var(--radius-2xl); border: 1px solid var(--border); background: var(--surface-strong); box-shadow: var(--shadow-soft); overflow: hidden; }
-.about-photo {
-  position: relative;
-  isolation: isolate;
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  min-height: 0;
-}
+.about-photo { position: relative; isolation: isolate; min-height: 400px; }
 .about-photo::after { content: ""; position: absolute; inset: auto 18px 18px 18px; height: 90px; background: linear-gradient(to top, rgba(0,0,0,.18), transparent); border-radius: 0 0 24px 24px; pointer-events: none; opacity: .2; }
 body.dark .about-photo::after { opacity: .35; }
-.about-photo img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 50% 14%;
-  filter: grayscale(1) contrast(1.04);
-  transform: scale(1.01);
-  transition: transform .8s var(--ease);
-}
+.about-photo img { 
+    width: 100%; height: 100%; object-fit: cover;
+     object-position: center top;
+      filter: grayscale(1) contrast(1.04); 
+      transform: scale(1.01); transition: transform .8s var(--ease);
+       position: absolute; inset: 0; 
+    }
 .about-photo:hover img { transform: scale(1.05); }
 .about-content { padding: clamp(26px, 4vw, 44px); display: flex; flex-direction: column; justify-content: center; }
 .about-content p { color: var(--text-soft); margin: 14px 0 0; font-size: clamp(.95rem, 1.5vw, 1rem); line-height: 1.9; }
@@ -299,7 +238,7 @@ body.dark .work-card { background: linear-gradient(180deg, rgba(255,255,255,.02)
   .availability { font-size: .8rem; padding: 7px 10px; }
   .hero { min-height: auto; padding-top: 54px; }
   .about-grid, .skills-layout, .contact-grid, .portfolio-grid { grid-template-columns: 1fr; }
-  .about-photo { aspect-ratio: 4 / 5; }
+  .about-photo { min-height: 340px; }
   .certificate-card { grid-template-columns: auto 1fr; align-items: start; }
   .badge { width: 122px; min-width: 122px; height: 156px; }
 }
@@ -319,6 +258,8 @@ body.dark .work-card { background: linear-gradient(180deg, rgba(255,255,255,.02)
   .timeline-copy { font-size: .91rem; }
   .badge { width: 110px; min-width: 110px; height: 140px; }
   .certificate-card { grid-template-columns: 1fr; }
+
+  
 }/* ====== TERMINAL ====== */
 .terminal-container {
   background: var(--surface-strong);
@@ -397,7 +338,7 @@ body.dark .dino-birthday-section {
   color: #0b0b0b;
 }
 .dino-celebration-title {
-  font-family: "Lyon Arabic Display", sans-serif;
+  font-family: "IBM Plex Sans Arabic", sans-serif;
   font-weight: 700;
   font-size: clamp(1.4rem, 3vw, 2rem);
   margin-bottom: 24px;
@@ -411,7 +352,7 @@ body.dark .dino-birthday-section {
   display: inline-block;
 }
 .dino-celebration-text {
-  font-family: "Lyon Arabic Display", sans-serif;
+  font-family: "IBM Plex Sans Arabic", sans-serif;
   font-size: clamp(1rem, 2vw, 1.3rem);
   line-height: 1.6;
   max-width: 600px;
@@ -673,39 +614,44 @@ body.dark .dino-birthday-section {
 /* تأكد من أن الـ 3D Tilt يعمل أيضاً على هذه الكروت الجديدة */
 /* أضف .ctf-card إلى قائمة الكلاسات في كود الجافاسكربت حق الـ Tilt */
 
-/* وضع الهاكر - أضفه في نهاية ملف style.css */
+/* ====== HACKER MODE CSS ====== */
+/* الحالة العامة عند تفعيل الوضع */
 body.hacker-mode {
     background: #000000 !important;
     color: #00ff41 !important;
-    font-family: 'Courier New', Courier, monospace !important;
+    font-family: 'Courier New', monospace !important;
 }
 
-/* تحويل كل الأسطح والبطاقات للأسود والحدود الخضراء */
+/* تحويل البطاقات والناف بار والأسطح */
 body.hacker-mode .skill-card, 
 body.hacker-mode .navbar, 
 body.hacker-mode .panel,
+body.hacker-mode .glass-card,
+body.hacker-mode .work-card,
+body.hacker-mode .certificate-card,
+body.hacker-mode .contact-card,
 body.hacker-mode .chatbot-window,
-body.hacker-mode .terminal-container {
+body.hacker-mode .hacker-activation-section {
     background: #050505 !important;
     color: #00ff41 !important;
     border: 1px solid #00ff41 !important;
-    box-shadow: 0 0 15px rgba(0, 255, 65, 0.2) !important;
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.3) !important;
 }
 
-/* تغيير ألوان النصوص الفرعية وأشرطة التقدم */
-body.hacker-mode .section-title,
-body.hacker-mode strong,
-body.hacker-mode span {
+/* توحيد ألوان النصوص */
+body.hacker-mode h1, body.hacker-mode h2, body.hacker-mode h3, 
+body.hacker-mode strong, body.hacker-mode span, body.hacker-mode p {
     color: #00ff41 !important;
 }
 
+/* أشرطة التقدم بنمط الهاكر */
 body.hacker-mode .progress-bar {
     background: #002200 !important;
-    border-color: #00ff41 !important;
+    border: 1px solid #00ff41 !important;
 }
-
 body.hacker-mode .progress-fill {
-    background: linear-gradient(90deg, #008f11, #00ff41) !important;
+    background: #00ff41 !important;
+    box-shadow: 0 0 10px #00ff41;
 }
 
 /* تأثير الخطوط الخضراء المتحركة (Scanlines) */
@@ -714,9 +660,417 @@ body.hacker-mode::after {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
     background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), 
-                linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+                linear-gradient(90deg, rgba(0, 255, 0, 0.02), rgba(0, 255, 0, 0.01));
     z-index: 9999;
     background-size: 100% 3px, 3px 100%;
     pointer-events: none;
     opacity: 0.3;
+}
+
+/* تنسيق قسم الفيروس */
+.hacker-activation-section { padding: 60px 0; text-align: center; border-top: 1px solid var(--border); }
+.virus-button-wrap { width: 120px; height: 120px; margin: 20px auto; cursor: pointer; transition: 0.3s; }
+.virus-button-wrap:hover { transform: scale(1.1); filter: drop-shadow(0 0 10px #ff0000); }
+.pixel-text-ar { font-family: 'Courier New', monospace; font-weight: bold; }
+
+
+/* ====== DINO CELEBRATION (متوافق مع الوضع الليلي) ====== */
+.dino-birthday-section {
+    /* جعل الخلفية شفافة ليتناسب مع ما تحته */
+    background: transparent !important; 
+    padding: 60px 0;
+    text-align: center;
+    transition: all 0.4s ease;
+}
+
+/* في الوضع الليلي: نتأكد أن القسم لا يملك خلفية بيضاء */
+body.dark .dino-birthday-section {
+    background: transparent !important;
+}
+
+.dino-birthday-img {
+    max-width: 100%;
+    height: auto;
+    background: transparent !important;
+    /* دمج الصورة مع الخلفية */
+    mix-blend-mode: multiply; 
+    transition: filter 0.4s ease;
+}
+
+/* سحر الوضع الليلي للديناصور */
+body.dark .dino-birthday-img {
+    /* عكس ألوان الديناصور ليصبح فاتحاً فوق الخلفية السوداء */
+    filter: invert(1) brightness(2);
+    /* تغيير طريقة الدمج لتناسب الألوان الفاتحة */
+    mix-blend-mode: screen; 
+}
+
+.dino-celebration-title {
+    color: var(--text); /* سيتحول للأبيض تلقائياً في الوضع الليلي */
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* توحيد شبكة منصات الـ CTF */
+.ctf-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+/* تنسيق الكارت الموحد */
+.ctf-card {
+    background: var(--surface-strong);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 180px; /* لضمان تساوي الطول */
+    transition: all 0.4s ease;
+}
+
+/* التحكم في الصور داخل الكروت */
+.ctf-card img {
+    max-width: 100%;
+    max-height: 100px; /* توحيد ارتفاع الشعارات */
+    object-fit: contain;
+    filter: grayscale(0.2);
+    transition: 0.4s;
+}
+
+/* الشعار الخاص بالمنصات التي تظهر صغيرة */
+.platform-logo {
+    width: 80%; /* تكبير الشعارات الصغيرة */
+}
+
+.ctf-card:hover {
+    transform: translateY(-8px);
+    border-color: #00ff41; /* لون أخضر خفيف عند التمرير */
+    box-shadow: var(--shadow-md);
+}
+
+.ctf-card:hover img {
+    filter: grayscale(0);
+}
+
+/* في الوضع الليلي */
+body.dark .ctf-card {
+    background: #0b0b0b;
+}
+
+/* التنسيق الافتراضي للصورة (على جميع الأجهزة) */
+.profile-picture {
+  width: 150px; /* المقاس على الجوال */
+  height: 150px;
+  border-radius: 50%; /* شكل دائري */
+  display: block;
+  margin: 0 auto;
+  object-fit: cover; /* لضمان عدم تمدد الصورة */
+}
+
+/* للمقاسات الكبيرة (الكمبيوتر): تغيير الحجم */
+@media (min-width: 2048px) {
+  .profile-picture {
+    width: 450px; /* المقاس على الكمبيوتر */
+    height: 250px;
+  }
+}
+
+/* ====== تعديل حجم الصورة الشخصية في الشاشات الكبيرة ====== */
+@media (min-width: 861px) {
+    .about-photo {
+        /* إيقاف التمدد ليتساوى مع طول النص، وجعله يتوسط المساحة عمودياً */
+        align-self: center; 
+        
+        /* تحويل الكرت لشكل مربع (مثل المربع الأحمر تماماً) */
+        aspect-ratio: 1 / 1; 
+        
+        /* تحديد ارتفاع مناسب للمربع (تقدر تزيده أو تنقصه حسب رغبتك) */
+        height: 650px; 
+        min-height: auto; /* إلغاء الطول الإجباري القديم */
+        
+        /* توسيط الكرت */
+        margin: 0 auto; 
+        width: 100%;
+        max-width: 800px; /* لضمان عدم توسعه أكثر من اللازم */
+    }
+
+    .about-photo img {
+        /* رفع التركيز شوي عشان الوجه يكون في المنتصف تماماً */
+        object-position: center 20%; 
+    }
+}/* تعريف خط Lyon Arabic بجميع أوزانه */
+
+/* 1. الوزن النحيف (Light) */
+@font-face {
+    font-family: 'Lyon Arabic';
+    src: url('COMM - Lyon Arabic Display Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+/* 2. الوزن العادي (Regular) */
+@font-face {
+    font-family: 'Lyon Arabic';
+    src: url('COMM - Lyon Arabic Display Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* 3. الوزن المتوسط (Medium) */
+@font-face {
+    font-family: 'Lyon Arabic';
+    src: url('COMM - Lyon Arabic Display Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* 4. الوزن العريض (Bold) */
+@font-face {
+    font-family: 'Lyon Arabic';
+    src: url('COMM - Lyon Arabic Display Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* 5. الوزن الأسود/العريض جداً (Black) */
+@font-face {
+    font-family: 'Lyon Arabic';
+    src: url('COMM - Lyon Arabic Display Black.otf') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+}
+/* ====== تصميم التيرمنال التفاعلي (Apple Style) ====== */
+.terminal-container {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    font-family: 'Courier New', Courier, monospace; /* خط الأكواد */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    direction: ltr; /* من اليسار لليمين إجباري */
+    margin-top: 20px;
+}
+
+/* شريط الأزرار العلوي */
+.terminal-header {
+    background: #f9f9f9;
+    padding: 12px 15px;
+    display: flex;
+    gap: 8px;
+    border-bottom: 1px solid var(--border);
+}
+
+.terminal-header .dot {
+    width: 12px; height: 12px; border-radius: 50%;
+}
+.dot.red { background: #ff5f56; }
+.dot.yellow { background: #ffbd2e; }
+.dot.green { background: #27c93f; }
+
+/* شاشة التيرمنال */
+.terminal-body {
+    padding: 20px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    height: 220px; /* طول التيرمنال */
+    overflow-y: auto;
+    cursor: text;
+}
+
+.terminal-input-line { display: flex; gap: 8px; margin-top: 5px; }
+.prompt { color: var(--text); font-weight: bold; }
+
+#terminalInput {
+    border: none; background: transparent; color: var(--text);
+    font-family: inherit; font-size: inherit; flex-grow: 1; outline: none;
+}
+
+/* التوافق مع الوضع الليلي ووضع الهاكر */
+body.dark .terminal-container { background: #111; }
+body.dark .terminal-header { background: #222; }
+body.hacker-mode .terminal-container { background: rgba(0,0,0,0.8); border-color: #00ff41; }
+body.hacker-mode .terminal-body, body.hacker-mode #terminalInput, body.hacker-mode .prompt { color: #00ff41; }
+
+/* ====== تصميم المسار الزمني (Timeline) ====== */
+.timeline {
+    position: relative;
+    margin: 40px 0;
+    padding-right: 35px; /* مساحة للخط الرأسي على اليمين */
+    border-right: 2px solid var(--border); /* الخط الرأسي */
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+/* النقطة الدائرية على الخط */
+.timeline-dot {
+    position: absolute;
+    top: 0;
+    right: -42px; /* لتوسيط النقطة تماماً على الخط الرأسي */
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--text); /* لون النقطة */
+    border: 3px solid var(--bg); /* إطار بلون الخلفية لفصل النقطة عن الخط */
+    box-shadow: 0 0 0 3px var(--border); /* ظل خفيف يعطي عمق */
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+/* التاريخ */
+.timeline-date {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #888;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+/* كرت المحتوى */
+.timeline-content {
+    background: #ffffff; /* أبيض ناصع في الوضع الفاتح */
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.25rem;
+    color: var(--text);
+}
+
+.timeline-content p {
+    margin: 0;
+    color: #555;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* تأثير عند مرور الماوس */
+.timeline-item:hover .timeline-dot {
+    background: #000;
+    transform: scale(1.2);
+}
+
+.timeline-item:hover .timeline-content {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+/* ====== التوافق مع الوضع الليلي والهاكر ====== */
+body.dark .timeline-content {
+    background: #111; /* خلفية داكنة للكروت */
+}
+body.dark .timeline-content p {
+    color: #aaa;
+}
+body.dark .timeline-item:hover .timeline-dot {
+    background: #fff;
+}
+
+/* وضع الهاكر */
+body.hacker-mode .timeline {
+    border-right-color: #00ff41;
+}
+body.hacker-mode .timeline-dot {
+    background: #00ff41;
+    border-color: #000;
+    box-shadow: 0 0 0 3px rgba(0, 255, 65, 0.3);
+}
+body.hacker-mode .timeline-content {
+    background: rgba(0,0,0,0.6);
+    border-color: #00ff41;
+}
+body.hacker-mode .timeline-content h3, 
+body.hacker-mode .timeline-content p,
+body.hacker-mode .timeline-date {
+    color: #00ff41;
+}
+
+/* أضف هذا الكود إلى ملف CSS الخاص بك */
+.timeline-content-column {
+    display: flex;
+    flex-direction: column; /* التكديس العمودي */
+    align-items: flex-start; /* محاذاة النص والصورة لليسار */
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: 30px;
+    background: var(--surface-strong);
+    transition: all 0.4s ease;
+}
+
+.timeline-image-top {
+    width: 240px; /* تحديد العرض المناسب */
+    height: auto; /* الارتفاع يتناسب تلقائياً */
+    margin-bottom: 15px; /* مسافة أسفل الصورة */
+    display: block;
+}
+
+/* ====== ضبط المسافة بين كروت الشهادات ====== */
+.certificates-grid {
+    display: flex;
+    flex-direction: column; /* ترتيب الكروت بشكل عمودي */
+    gap: 25px; /* 👈 هذا هو السطر السحري اللي بيعطي المسافة بينهم! تقدر تزيده أو تنقصه */
+}
+
+/* احتياط في حال كان عرض الشاشة كبير وتبيهم جنب بعض بدال تحت بعض */
+@media (min-width: 900px) {
+    .certificates-grid {
+        display: grid;
+        grid-template-columns: 1fr; /* خلها 1fr عشان تظل تحت بعض، أو repeat(2, 1fr) إذا تبيها كرتين في السطر */
+        gap: 30px;
+    }
+}
+/* ====== تصميم زر عرض الشهادة ====== */
+.cert-action {
+    margin-top: 25px; /* مسافة بين الزر والتاجات اللي فوقه */
+}
+
+.cert-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--bg); /* لون النص (أبيض في النهار، أسود في الليل) */
+    background: var(--text); /* لون الزر (أسود في النهار، أبيض في الليل) */
+    text-decoration: none;
+    border-radius: 8px; /* انحناء خفيف للأطراف */
+    transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* تأثير التمرير (Hover) */
+.cert-btn:hover {
+    transform: translateY(-3px); /* يرتفع لفوق شوي */
+    opacity: 0.9;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+/* ====== توافق الزر مع وضع الهاكر ====== */
+body.hacker-mode .cert-btn {
+    background: transparent;
+    color: #00ff41;
+    border: 1px solid #00ff41;
+}
+
+body.hacker-mode .cert-btn:hover {
+    background: #00ff41;
+    color: #000;
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.3);
 }
