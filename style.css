@@ -1074,3 +1074,32 @@ body.hacker-mode .cert-btn:hover {
     color: #000;
     box-shadow: 0 0 15px rgba(0, 255, 65, 0.3);
 }
+
+/* ====== زر الإدخال للتيرمنال في الجوال ====== */
+.terminal-enter-btn {
+    background: transparent;
+    border: none;
+    color: var(--text);
+    font-size: 1.4rem;
+    font-weight: bold;
+    cursor: pointer;
+    opacity: 0.5;
+    padding: 0 10px;
+    transition: opacity 0.3s ease;
+}
+
+.terminal-enter-btn:hover {
+    opacity: 1;
+}
+
+/* إخفاء الزر في شاشات الكمبيوتر (لأن عندهم كيبورد حقيقي) */
+@media (min-width: 769px) {
+    .terminal-enter-btn {
+        display: none; 
+    }
+}
+
+/* لون الزر في وضع الهاكر */
+body.hacker-mode .terminal-enter-btn {
+    color: #00ff41;
+}
