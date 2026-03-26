@@ -317,13 +317,12 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
-
-// === برمجة التيرمنال التفاعلي للـ Portfolio ===
+// === برمجة التيرمنال التفاعلي (مُحدث لدعم الجوال) ===
 const terminalInput = document.getElementById('terminalInput');
 const terminalOutput = document.getElementById('terminalOutput');
 const terminalBody = document.getElementById('terminalBody');
+const terminalForm = document.getElementById('terminalForm'); // إضافة الفورم
 
-// قائمة الأوامر المتاحة
 const commands = {
     'whoami': '> CS_Student | Cybersecurity_Enthusiast | Graphic_Designer',
     'skills': '[+] Network Security\n[+] Penetration Testing\n[+] Python & Java\n[+] Web Development',
@@ -332,44 +331,41 @@ const commands = {
     'clear': ''
 };
 
-// التركيز على مربع الكتابة بمجرد الضغط على أي مكان في التيرمنال
-if(terminalBody && terminalInput) {
+if(terminalForm && terminalInput && terminalBody) {
     terminalBody.addEventListener('click', () => terminalInput.focus());
 
-    terminalInput.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-            const cmd = this.value.trim().toLowerCase();
+    // استبدلنا keypress بـ submit عشان يدعم الجوال
+    terminalForm.addEventListener('submit', function(e) {
+        e.preventDefault(); // يمنع المتصفح من تحديث الصفحة
+
+        const cmd = terminalInput.value.trim().toLowerCase();
+        
+        // طباعة السطر اللي كتبه الزائر
+        const cmdLine = document.createElement('div');
+        cmdLine.innerHTML = `<span class="prompt">ali@alsahad:~$</span> ${terminalInput.value}`;
+        terminalOutput.appendChild(cmdLine);
+
+        // تنفيذ الأوامر
+        if (cmd === 'clear') {
+            terminalOutput.innerHTML = '';
+        } else if (cmd === 'sudo hack') {
+            document.body.classList.add("hacker-mode");
+            const response = document.createElement('div');
+            response.style.color = '#00ff41';
+            response.textContent = 'Access Granted. Welcome to the Matrix...';
+            terminalOutput.appendChild(response);
+        } else if (cmd !== '') {
+            const response = document.createElement('div');
+            response.style.whiteSpace = 'pre-wrap';
+            response.style.marginBottom = '12px';
+            response.style.opacity = '0.9';
             
-            // طباعة السطر اللي كتبه الزائر
-            const cmdLine = document.createElement('div');
-            cmdLine.innerHTML = `<span class="prompt">ali@alsahad:~$</span> ${this.value}`;
-            terminalOutput.appendChild(cmdLine);
-
-            // تنفيذ الأوامر
-            if (cmd === 'clear') {
-                terminalOutput.innerHTML = '';
-            } else if (cmd === 'sudo hack') {
-                // الأمر السري: يشغل وضع الهاكر تلقائياً!
-                document.body.classList.add("hacker-mode");
-                const response = document.createElement('div');
-                response.style.color = '#00ff41';
-                response.textContent = 'Access Granted. Welcome to the Matrix...';
-                terminalOutput.appendChild(response);
-            } else if (cmd !== '') {
-                const response = document.createElement('div');
-                response.style.whiteSpace = 'pre-wrap';
-                response.style.marginBottom = '12px';
-                response.style.opacity = '0.9';
-                
-                // البحث عن الأمر أو طباعة خطأ
-                response.textContent = commands[cmd] || `bash: ${cmd}: command not found`;
-                terminalOutput.appendChild(response);
-            }
-
-            // تنظيف مربع الكتابة والنزول لأسفل
-            this.value = '';
-            terminalBody.scrollTop = terminalBody.scrollHeight;
+            response.textContent = commands[cmd] || `bash: ${cmd}: command not found`;
+            terminalOutput.appendChild(response);
         }
+
+        // تنظيف مربع الكتابة والنزول لأسفل
+        terminalInput.value = '';
+        terminalBody.scrollTop = terminalBody.scrollHeight;
     });
 }
-
